@@ -6,12 +6,6 @@ client {
   node_class = "client-1"
 }
 
-plugin "raw_exec" {
-  config {
-    enabled = true
-  }
-}
-
 plugin "generic-device" {
   config {
     enabled = true
@@ -20,13 +14,7 @@ plugin "generic-device" {
       type = "ecu"
       vendor = "qualcomm"
       task_path = "/dev/qualcomm-1"
-      host_path = "/dev/bus/usb/001/001"
-    }
-    device {
-      type = "ecu"
-      vendor = "qualcomm"
-      task_path = "/dev/qualcomm-2"
-      host_path = "/dev/bus/usb/001/002"
+      host_path = "/dev/bus/usb/001/004"
     }
   }
 }
@@ -35,6 +23,4 @@ vault {
   enabled = true
   address = "http://vault-server:8200/"
 }
-
-
 
