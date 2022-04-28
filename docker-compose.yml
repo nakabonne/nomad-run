@@ -1,0 +1,25 @@
+---
+version: "3"
+services:
+  nomad-server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+      args:
+        NOMAD_VERSION: 1.2.5
+    ports:
+      - "4646:4646"
+    command: ["agent", "-config=/etc/nomad"]
+  nomad-client-1:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+      args:
+        NOMAD_VERSION: 1.2.5
+        CLIENT_FILE: client-1.hcl
+    privileged: true
+    command: ["agent", "-config=/etc/nomad"]
+    devices:
+      - "/dev/bus/usb/001/004"
+    depends_on:
+      - nomad-server
