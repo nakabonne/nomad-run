@@ -7,9 +7,7 @@ restart:
 	docker-compose down
 	docker-compose up --build -d
 
-play:
+job:
+	#./bin/nomad job stop --purge play
 	./bin/nomad run ./examples/play.nomad
-	./bin/nomad status play
 
-play-purge:
-	./bin/nomad job stop --purge play

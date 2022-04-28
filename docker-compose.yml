@@ -21,5 +21,6 @@ services:
     command: ["agent", "-config=/etc/nomad"]
     devices:
       - "/dev/bus/usb/001/004"
+      - "/dev/bus/usb/001/005"
     depends_on:
       - nomad-server

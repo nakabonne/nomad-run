@@ -10,9 +10,19 @@ plugin "generic-device" {
   config {
     enabled = true
     fingerprint_period = "1m"
+
     device {
+      vendor = "cetibox"
       type = "ecu"
+      # This will be mounted by the task
+      host_path = "/dev/bus/usb/001/005"
+    }
+
+    device {
       vendor = "qualcomm"
+      type = "ecu"
+      # optional
+      model = "snapdragon-888"
       host_path = "/dev/bus/usb/001/004"
     }
   }

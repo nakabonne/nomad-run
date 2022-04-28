@@ -1,21 +1,30 @@
-job "play" {
+job "play-i" {
   datacenters = ["dc1"]
   type = "batch"
+
+  #meta {
+  #  run_uuid = "${uuidv4()}"
+  #}
 
   group "play-group" {
     task "play-task" {
       driver = "exec"
 
-      # Reserve one qualcomm board connected via USB.
+      # Reserve a qualcomm board and a cetibox board connected via USB.
       resources {
+        device "cetibox/ecu" {
+          count = 1
+        }
         device "qualcomm/ecu" {
           count = 1
         }
       }
 
       config {
-        command = "echo"
-        args = ["${DEVICE_PATH_QUALCOMM_ECU_0}"]
+        #command = "ls"
+        #args = ["${DEVICE_PATH_QUALCOMM_ECU_0}"]
+        command = "sleep"
+        args = ["70s"]
       }
     }
   }
