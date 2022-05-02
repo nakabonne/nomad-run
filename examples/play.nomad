@@ -1,10 +1,6 @@
-job "play-i" {
+job "play" {
   datacenters = ["dc1"]
   type = "batch"
-
-  #meta {
-  #  run_uuid = "${uuidv4()}"
-  #}
 
   group "play-group" {
     task "play-task" {
@@ -22,7 +18,7 @@ job "play-i" {
 
       config {
         command = "/bin/bash"
-        args = ["-c", "printenv | grep DEVICE_PATH"]
+        args = ["-c", "printenv | grep HWAPI_DEVICE_PATH"]
         #command = "sleep"
         #args = ["70s"]
       }
