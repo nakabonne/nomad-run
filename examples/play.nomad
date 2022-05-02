@@ -21,10 +21,10 @@ job "play-i" {
       }
 
       config {
-        #command = "ls"
-        #args = ["${DEVICE_PATH_QUALCOMM_ECU_0}"]
-        command = "sleep"
-        args = ["70s"]
+        command = "/bin/bash"
+        args = ["-c", "printenv | grep DEVICE_PATH"]
+        #command = "sleep"
+        #args = ["70s"]
       }
     }
   }

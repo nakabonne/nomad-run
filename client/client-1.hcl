@@ -15,7 +15,7 @@ plugin "generic-device" {
       vendor = "cetibox"
       type = "ecu"
       # This will be mounted by the task
-      host_path = "/dev/bus/usb/001/005"
+      host_path = "/dev/bus/usb/001/006"
     }
 
     device {
@@ -23,7 +23,7 @@ plugin "generic-device" {
       type = "ecu"
       # optional
       model = "snapdragon-888"
-      host_path = "/dev/bus/usb/001/004"
+      host_path = "/dev/bus/usb/001/007"
     }
   }
 }
