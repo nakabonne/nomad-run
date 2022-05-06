@@ -8,6 +8,6 @@ restart:
 	docker-compose up --build -d
 
 job:
-	#./bin/nomad job stop --purge play
+	./bin/nomad job stop --purge play
 	./bin/nomad run ./examples/play.nomad
 

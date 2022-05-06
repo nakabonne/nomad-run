@@ -1,23 +1,31 @@
-
-
 ## Prerequisite
 
-- `docker-compose` is installed
-- Move the built `generic-device` plugin binary to `client/`
+- Move the built `generic-device` plugin binary to `plugins/`
 - Connect devices to your machine and replace the device paths in `docker-compose.yml` and `client/client-1.hcl` with actual path
 
-## Usage
+Download the nomad binary
+
+```
+$ make ./bin/nomad
+```
+
+## Run
+
+```
+$ mkdir data
+$ sudo ./bin/nomad agent -dev -config=./client/client-1.hcl -config=./server/server.hcl -data-dir=${PWD}/data -plugin-dir=${PWD}/plugins
+```
+
+### Run with docker-compose
+NOTE: `docker-compose` is required.
+
 Run Nomad server and client
 
 ```
 $ make restart
 ```
 
-Download the nomad CLI
-
-```
-$ make ./bin/nomad
-```
+## Play
 
 Ensure it can connect
 

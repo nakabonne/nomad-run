@@ -8,19 +8,17 @@ job "play" {
 
       # Reserve a qualcomm board and a cetibox board connected via USB.
       resources {
-        device "cetibox/ecu" {
-          count = 1
-        }
+        #device "cetibox/ecu" {
+        #  count = 1
+        #}
         device "qualcomm/ecu" {
           count = 1
         }
       }
 
       config {
-        command = "/bin/bash"
-        args = ["-c", "printenv | grep HWAPI_DEVICE_PATH"]
-        #command = "sleep"
-        #args = ["70s"]
+        command = "/usr/bin/adb"
+        args = ["devices"]
       }
     }
   }

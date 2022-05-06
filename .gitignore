@@ -1,3 +1,4 @@
 
-client/generic-device
+plugins/generic-device
 bin/*
+data/*

@@ -20,7 +20,8 @@ services:
     privileged: true
     command: ["agent", "-config=/etc/nomad"]
     devices:
-      - "/dev/bus/usb/001/004"
-      - "/dev/bus/usb/001/005"
+      - "/dev/bus/usb/001/006"
+      - "/dev/bus/usb/001/007"
+      - "/dev/bus/usb/001/010"
     depends_on:
       - nomad-server

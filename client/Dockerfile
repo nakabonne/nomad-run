@@ -23,7 +23,7 @@ RUN mkdir -p /etc/nomad ${NOMAD_DATA_DIR} ${NOMAD_PLUGINS_DIR}
 
 COPY client/${CLIENT_FILE} /etc/nomad/${CLIENT_FILE}
 
-COPY client/generic-device ${NOMAD_PLUGINS_DIR}
+COPY plugins/generic-device ${NOMAD_PLUGINS_DIR}
 
 EXPOSE 4646 4647 4648 4648/udp
 
