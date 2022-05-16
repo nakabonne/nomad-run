@@ -25,6 +25,12 @@ plugin "generic-device" {
       model = "6155"
       device_path = "/dev/bus/usb/001/010"
     }
+
+    device {
+      vendor = "iodata"
+      type = "usb-drive"
+      device_path = "/dev/sdc1"
+    }
   }
 }
 
