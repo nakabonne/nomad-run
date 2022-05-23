@@ -11,17 +11,9 @@ plugin "generic-device" {
     enabled = true
     fingerprint_period = "1m"
 
-    #device {
-    #  vendor = "cetibox"
-    #  type = "ecu"
-    #  # This will be mounted by the task
-    #  device_path = "/dev/bus/usb/001/006"
-    #}
-
     device {
       vendor = "qualcomm"
       type = "ecu"
-      # optional
       model = "6155"
       device_path = "/dev/bus/usb/001/010"
     }
