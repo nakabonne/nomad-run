@@ -13,7 +13,6 @@ $ make ./bin/nomad
 
 ```
 $ make run
-$ sudo ./bin/nomad agent -dev -config=./client/client-1.hcl -config=./server/server.hcl -data-dir=${PWD}/data -plugin-dir=${PWD}/plugins
 ```
 
 ### Run with docker-compose
