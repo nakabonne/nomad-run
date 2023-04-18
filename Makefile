@@ -1,7 +1,7 @@
 
 ./bin/nomad:
 	@mkdir -p bin
-	cd bin && curl -o nomad.zip https://releases.hashicorp.com/nomad/1.2.5/nomad_1.2.5_linux_amd64.zip && unzip nomad.zip && rm nomad.zip
+	cd bin && curl -o nomad.zip https://releases.hashicorp.com/nomad/1.5.3/nomad_1.5.3_linux_amd64.zip && unzip nomad.zip && rm nomad.zip
 
 run:
 	@mkdir -p data
